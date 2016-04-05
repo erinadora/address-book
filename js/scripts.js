@@ -33,7 +33,7 @@ function resetFields() {
 $(document).ready(function() {
 
   $("#add-address").click(function() {
-    $("#new-addresses").append('<div class="new-address">' +
+    $("#new-addresses").append('<div id="ogAddress">' +
                                 '<div class="form-group">' +
                                   '<label for="new-addressType">Type of Address</label>' +
                                   '<input type="text" class="form-control new-addressType">' +
@@ -54,8 +54,10 @@ $(document).ready(function() {
   });
 
   $("form#new-contact").submit(function(event) {
-    debugger;
+
     event.preventDefault();
+
+    $("#ogAddress").hide();
 
     var inputtedFirstName = $("input#new-first-name").val();
     var inputtedLastName = $("input#new-last-name").val();
